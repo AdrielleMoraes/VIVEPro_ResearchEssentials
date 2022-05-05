@@ -6,12 +6,17 @@ This Repository was created to supply scripts for the [VivePro headset](https://
 
 Before using this code, it is important to set up the development environment correctly. Dependencies to run this script include:
 
-1. [Viveport SDK](https://developer.vive.com/resources/viveport/sdk/documentation/english/viveport-sdk/integration-viveport-sdk/unity-developers/) on Unity
-2. Steam VR to run code on the headset
-3. Vive [SRAnipal SDK](https://vr.tobii.com/sdk/develop/unity/getting-started/vive-pro-eye/)
+1. Steam VR to run code on the headset
+2. ViveSR [SRAnipal SDK](https://hub.vive.com/en-US/download) - you can find more info [here](https://dl.vive.com/Tracker/Guideline/Vive%20Face%20Tracker%20Developer%20Quick%20Start.pdf)
+3. Unity Packages: 
+   - OpenXR
+   - AR foundations 
+   - XR Interaction Toolkit (also import starter assets to get input actions from controller)
 
 ## Data related to Eye movement: 
-All gaze data is recorded at 120 Hz
+
+Attach the SRanipal_Eye_Framework from the ViveSR package to one game object in your scene. Make sure that "Enable Eye" and "Enable Data Callback" are ticked.
+Secondly, attach the EyeTracker_DataCollection to a game object in the scene. After doing this you can change what is the default file name. After following these two steps you will be able to record gaze data at 120 Hz and save it to a Data folder in the root of the unity project.
 | Variable Type | Description | 
 | --- | --- |
 | `Timestamp` | Timestamp in ms of when sample was recorded |
