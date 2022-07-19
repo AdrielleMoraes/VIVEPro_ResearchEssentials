@@ -34,14 +34,22 @@ Secondly, attach the EyeTracker_DataCollection to a game object in the scene. Af
 | `Head Origin Y` | Head origin on the Y axis |
 | `Head Origin Z` | Head origin on the Z axis |
 
-## Data related to Perfomance: 
-All performance data is capture once for each frame.
-| Variable Type | Description | 
+## Controller Data : 
+All controller data is captured after an event is triggered. It contains information about when the event started, which controller it is from or if it is a head pose data.
+
+Note that this script requires that an action map is created inside Unity. You can use the one provided in this repo or change/create another one yourself. The action map used here is the same that comes with the examples folder when setting up the Vive Pro.
+
+There are three types of data which you can choose from:
+1. All data: controller input (interaction), controller movement (locomotion), and head pose;
+2. Controller data: controller input (interaction) and controller movement (locomotion)
+3. Controller input: only data taken if the user presses a button (interaction)
+
+| Variable Type | Description |
 | --- | --- |
 | `Timestamp` | Timestamp in ms of when sample was recorded |
-| `Left Controller push button` | Boolean variable with the status of the button |
-| `Left Controller trigger button` | Boolean variable with the status of the button |
-| `Right Controller push button` | Boolean variable with the status of the button |
-| `Right Controller trigger button` | Boolean variable with the status of the button |
+| `Action Name` | Name of the recorded action accordingly to what was defined in Unity |
+| `Control Type` | Which controller data is comming from or "head" if it is a head pose data |
+| `Phase` | Status of the action. There are two types available: Started and Finished. This can be used to detect onButtonDown and onButtonUp events |
+
 
 All data is saved to a txt file inside the project's main folder.
