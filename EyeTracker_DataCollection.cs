@@ -163,4 +163,24 @@ public class EyeTracker_DataCollection : MonoBehaviour
     {
         return string.Format("{0},{1},{2}", v3.x, v3.y, v3.z);
     }
+    
+    public void Calibration()
+    {
+
+        result_cal = SRanipal_Eye_v2.LaunchEyeCalibration();
+
+        if (result_cal == true)
+        {
+            Debug.Log("Calibration is done successfully.");
+        }
+
+        else
+        {
+            Debug.Log("Calibration is failed.");
+            if (UnityEditor.EditorApplication.isPlaying)
+            {
+                UnityEditor.EditorApplication.isPlaying = false;    // Stops Unity editor if the calibration if failed.
+            }
+        }
+    }
 }
