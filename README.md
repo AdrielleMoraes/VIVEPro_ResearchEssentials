@@ -27,12 +27,7 @@ Secondly, attach the EyeTracker_DataCollection to a game object in the scene. Af
 | `Gaze Origin X` | Combined gaze origin on the X axis |
 | `Gaze Origin Y` | Combined gaze origin on the Y axis |
 | `Gaze Origin Z` | Combined gaze origin on the Z axis |
-| `Head Direction X` | Head direction on the X axis |
-| `Head Direction Y` | Head direction on the Y axis |
-| `Head Direction Z` | Head direction on the Z axis |
-| `Head Origin X` | Head origin on the X axis |
-| `Head Origin Y` | Head origin on the Y axis |
-| `Head Origin Z` | Head origin on the Z axis |
+
 
 ## Controller Data : 
 All controller data is captured after an event is triggered. It contains information about when the event started, which controller it is from or if it is a head pose data.
